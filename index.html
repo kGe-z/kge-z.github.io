@@ -1,0 +1,1256 @@
+
+    <!DOCTYPE html>
+    <html lang="zh">
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>文章示例——优秀软件工程师的自我修养-文档示例</title>
+        <link rel="icon" href="./smore-favicon.ico">
+        <style>
+          html, body {
+            font-size: 15px;
+            padding: 0;
+            margin: 0;
+          }
+
+          body{
+            color: #242a31;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+          }
+
+          * {
+            box-sizing: border-box;
+          }
+          
+      .cpp-class-content-title {
+        font-weight: bold;
+        margin-bottom: 6px;
+        margin-top: 10px;
+        font-size: 1rem;
+      }
+    
+      .cpp-class {
+        margin-bottom: 16px;
+        border: 1px solid #d3dce4;
+        border-radius: 6px;
+      }
+
+      .cpp-class-title {
+        color: #434444;
+        font-size: 1rem;
+        font-weight: bold;
+        margin-left: 0.94rem;
+      }
+
+      .cpp-class-tag {
+        display: flex;
+        display: -webkit-box;
+        justify-content: center;
+        -webkit-box-pack: center;
+        align-items: center;
+        -webkit-box-align: center;
+        height: 22px;
+        padding: 0 8px;
+        border-radius: 10px;
+        color: #fff;
+        font-weight: bold;
+        font-size: 0.86rem;
+        border-radius: 24px;
+        background: var(--primary-color);
+      }
+
+      .cpp-class-header {
+        display: flex;
+        display: -webkit-box;
+        align-items: center;
+        -webkit-box-align: center;
+        padding: 16px 20px 0;
+        page-break-inside: avoid;
+      }
+    
+      .embed-parameters {
+        margin-top: 10px;
+      }
+
+      .embed-parameters table td:first-child * {
+        font-weight: bold !important;
+      }
+
+      .embed-content-title {
+        font-weight: bold;
+        margin: 12px 0;
+      }
+    
+      .embed-content {
+        padding: 10px 18px;
+        font-size: 0.94rem;
+      }
+
+      .embed-content div.paragraph {
+        margin-bottom: 4px;
+      }
+
+      .embed-content .math {
+        padding: 0;
+        margin: 0;
+      }
+
+      .embed-content pre {
+        margin-bottom: 12px;
+        min-height: 36px;
+        padding: 12px 24px 12px 16px;
+        border: 1px solid #d3dce4;
+      }
+
+      .embed-content td {
+        border-color: #d3dce4;
+      }
+
+      .embed-content table {
+        margin-bottom: 6px;
+      }
+    
+      .embed {
+        margin-bottom: 16px;
+        border: 1px solid #d3dce4;
+        border-radius: 4px;
+        page-break-inside: avoid;
+      }
+
+      .embed-code {
+        background: #f5f6f7;
+        border-bottom: 1px solid #d3dce4;
+        padding: 0 14px 10px;
+        max-width: 100%;
+        box-sizing: border-box;
+      }
+
+      .embed-code pre {
+        padding: 0;
+        background: transparent;
+        border: none;
+        margin: 0;
+        min-height: 0;
+      }
+
+      .embed-title {
+        display: flex;
+        display: -webkit-box;
+        justify-content: space-between;
+        -webkit-box-pack: justify;
+        align-items: center;
+        -webkit-box-align: center;
+        height: 40px;
+        padding: 0 15px;
+        background: #f5f7f9;
+        color: #434444;
+        font-size: 1rem;
+        font-weight: bold;
+        page-break-inside: avoid;
+      }
+
+      .embed-title-content {
+        -webkit-box-flex: 1;
+      }
+
+      .embed-tag {
+        display: flex;
+        display: -webkit-box;
+        justify-content: center;
+        -webkit-box-pack: center;
+        align-items: center;
+        -webkit-box-align: center;
+        height: 22px;
+        width: 100px;
+        font-size: 0.86rem;
+        background: #d3dce4;
+        border-radius: 10px;
+      }
+    
+      .api-parameter {
+        display: -webkit-box;
+        display: flex;
+        align-items: center;
+        -webkit-box-align: center;
+        padding: 8px 0;
+        page-break-inside: avoid;
+      }
+
+      .api-parameter-required {
+        width: 100px;
+        font-size: 0.85rem;
+      }
+
+      .api-parameter-name {
+        width: 130px;
+        margin-right: 20px;
+      }
+
+      .api-parameter-type {
+        width: 80px;
+      }
+
+      .api-parameter-type span {
+        padding: 2px 6px;
+        font-size: 0.94rem;
+        white-space: nowrap;
+        border-radius: 4px;
+        background-color: #f5f7f9;
+        line-height: 1.7em;
+        letter-spacing: 1.2px;
+      }
+      
+      .api-parameter-desc {
+        color: #73818D;
+        flex: 1;
+        box-flex: 1;
+        max-width: 280px;
+      }
+    
+      .api-request-title {
+        font-weight: bold;
+        font-size: 1.06rem;
+        line-height: 1.625;
+        margin-bottom: 4px;
+        color: #74818d;
+      }
+
+      .api-request-parameter-content {
+        border: 1px solid #e6ecf1;
+        border-radius: 4px;
+        padding: 12px;
+      }
+
+      .api-request-parameter-content + .api-request-title {
+        margin-top: 1.3rem;
+      }
+    
+      .api-request {
+        border: 1px solid #e6ecf1;
+        border-radius: 4px;
+        padding: 12px 20px 20px;
+        margin-bottom: 24px;
+      }
+    
+      .api-response-description {
+        color: #74818d;
+        margin-bottom: 12px;
+        font-size: 1.06rem;
+        line-height: 1.625;
+      }
+    
+      .api-response-example {
+        page-break-inside: avoid;
+      }
+
+      .api-response-title {
+        font-size: 1.06rem;
+        font-weight: bold;
+        margin-bottom: 8px;
+        display: -webkit-box;
+        display: flex;
+        align-items: center;
+        -webkit-box-align: center;
+      }
+
+      .api-response-status-dot {
+        width: 10px;
+        height: 10px;
+        margin-right: 6px;
+        border-radius: 50%;
+      }
+
+      .api-response-example + .api-response-example {
+        margin-top: 24px;
+      }
+  
+      .api-response {
+        border: 1px solid #e6ecf1;
+        border-radius: 4px;
+        padding: 20px;
+      }
+  
+      .api-section-title {
+        font-weight: bold;
+        font-size: 1rem;
+        margin-bottom: 12px;
+      }
+    
+      .api-description {
+        margin-bottom: 16px;
+        line-height: 1.625;
+      }
+    
+      .api {
+        margin-bottom: 1.6rem;
+      }
+
+      .api-title {
+        margin: 0 0 1.35rem;
+        font-size: 1.35rem;
+        font-weight: bold;
+        line-height: 1.5;
+        display: -webkit-box;
+        display: flex;
+        align-items: center;
+        -webkit-box-align: center;
+      }
+
+      .api-method {
+        display: flex;
+        display: -webkit-box;
+        justify-content: center;
+        -webkit-box-pack: center;
+        align-items: center;
+        -webkit-box-align: center;
+        height: 20px;
+        padding: 0 8px;
+        border-radius: 10px;
+        font-weight: bold;
+        font-size: 0.86rem;
+        color: #ffffff;
+        margin-right: 0.8rem;
+      }
+
+      .api-url {
+        margin-bottom: 1.6rem;
+        border-radius: 3px;
+        padding: 8px;
+        letter-spacing: 1.1px;
+        background: #f5f7f9;
+      }
+
+      .api-url-host {
+        color: #73818D;
+        margin-right: 8px;
+      }
+
+      .api-url-path {
+        font-weight: bold;
+      }
+    
+      .math {
+        margin: 32px auto 24px;
+        padding: 8px;
+        font-size: 1.2em;
+        line-height: 1.2;
+        text-align: center;
+        white-space: nowrap;
+        position: relative;
+      }
+    
+      .file {
+        display: flex;
+        display: -webkit-box;
+        justify-content: space-between;
+        -webkit-box-pack: justify;
+        align-items: center;
+        -webkit-box-align: center;
+        box-shadow: rgb(116 129 141 / 10%) 0 3px 8px 0;
+        border: 1px solid #E6ECF0;
+        border-radius: 4px;
+        margin: 20px 0 16px;
+        padding: 17px;
+      }
+
+      .file a {
+        font-weight: bold;
+        display: -webkit-box;
+        display: flex;
+        align-items: center;
+        -webkit-box-align: center;
+      }
+
+      .file-info {
+        color: #9CAAB7;
+        font-size: 0.8rem;
+      }
+    
+      video {
+        width: 100%;
+      }
+    
+      .hint {
+        position: relative;
+        margin: 16px 0;
+        padding: 26px 24px 20px 65px;
+        border-left: 4px solid #fff;
+        border-radius: 4px;
+        line-height: 1em;
+        background-color: #f5f7f9;
+        page-break-inside: avoid;
+      }
+    
+      .hint .hint-icon {
+        position: absolute;
+        top: 24px;
+        left: 16px;
+      }
+
+      .hint-icon svg {
+        width: 30px;
+        height: 30px;
+      }
+    
+      .hint h1, .hint h2, .hint h3, .hint h4, .hint h5, .hint ul, .hint ol, .hint p{
+        margin-top: 0;
+      }
+    
+      .image {
+        margin: 16px auto;
+        text-align: center;
+        max-width: 100%;
+        page-break-inside: avoid;
+        border-radius: 4px;
+      }
+    
+      .image img {
+        max-width: 100%;
+      }
+    
+      .image-caption {
+        margin-top: 12px;
+        color: #9CAAB6
+      }
+      
+      .inlineImage {
+        margin: 0 2px;
+        max-width: 100%;
+        display: inline-block;
+      }
+
+      .inlineImage img {
+        max-width: 100%;
+      }
+    
+      td {
+        padding: 8px 8px 6px;
+        vertical-align: top;
+        border: 1px solid #e7e9e8;
+      }
+
+      td div.paragraph {
+        margin: 0;
+      }
+    
+      table {
+        max-width: 100%;
+        margin-bottom: 24px;
+        word-break: break-word;
+        table-layout: fixed;
+        border-collapse: collapse;
+        page-break-inside: avoid;
+      }
+
+      table.hideBorder td {
+        border-color: transparent;
+      }
+    
+      pre {
+        border-radius: 4px;
+        padding: 16px 24px 16px 24px;
+        background: #f5f6f7;
+        border: 1px solid #dee0e3;
+        line-height: 1.6;
+        font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+        font-size: 0.94rem;
+        page-break-inside: avoid;
+      }
+    
+      blockquote {
+        margin: 16px 0;
+        padding: 15px 0 15px 20px;
+        border-left: 4px solid #E6ECF0;
+        color: #7a8692;
+        line-height: 1.625;
+        page-break-inside: avoid;
+      }
+
+      blockquote h1,
+      blockquote h2,
+      blockquote h3,
+      blockquote h4,
+      blockquote ul,
+      blockquote li,
+      blockquote li::marker {
+        color: #7a8692;
+      }
+    
+      blockquote ul,
+      blockquote ol {
+        padding: 0 0 0 2em;
+        margin: 0 0 8px;
+      }
+  
+      ol {
+        padding-left: 2em;
+        margin-bottom: 8px;
+        line-height: 1.625;
+      }
+    
+      ul {
+        padding-left: 2em;
+        margin-bottom: 8px;
+        line-height: 1.625;
+      }
+    
+      li {
+        color: #3b454e;
+        margin: 0 0 0.3rem;
+      }
+
+      .check-list-item {
+        position: relative;
+        list-style: none;
+      }
+
+      .check-list-item .before {
+        position: absolute;
+        left: -26px;
+        top: 3px;
+        width: 17px;
+        height: 17px;
+        border: 1px solid #d9d9d9;
+        border-radius: 4px;
+        transition: all 0.2s;
+      }
+
+      .check-list-item.checked {
+        color: #a4acad;
+        text-decoration: line-through;
+      }
+
+      .check-list-item.checked .before:after {
+        position: absolute;
+        border: 2px solid var(--primary-color);
+        border-top: 0;
+        border-left: 0;
+        transform: rotate(45deg) scale(1) translate(-50%, -50%);
+        -webkit-transform: rotate(45deg) scale(1) translate(-50%, -50%);
+        opacity: 1;
+        content: ' ';
+        width: 3px;
+        height: 8px;
+        top: 48%;
+        left: 26%;
+      }
+    
+        h1 {
+            margin: 1.85rem 0 1.1rem;
+            font-size: 1.6rem;
+            font-weight: bold;
+            line-height: 1.5;
+        }
+      
+      h2 {
+          margin: 1.6rem 0 1.1rem;
+          font-size: 1.45rem;
+          font-weight: bold;
+          line-height: 1.5;
+      }
+      
+        h3 {
+          margin: 1.1rem 0 1rem;
+          font-size: 1.34rem;
+          font-weight: bold;
+          line-height: 1.5;
+        }
+        
+        h4 {
+            margin: 1.1rem 0 1rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            line-height: 1.5;
+        }
+        
+        h5 {
+          line-height: 1.5;
+          margin-top: 1.1rem;
+          margin-bottom: 1ren;
+          font-size: 1.1rem;
+          font-weight: bold;
+        }
+        
+        h6 {
+          line-height: 1.5;
+          margin-top: 1.1rem;
+          margin-bottom: 1ren;
+          font-size: 1rem;
+          font-weight: bold;
+        }
+        
+        .paragraph {
+            margin: 0 0 8px;
+            line-height: 1.625;
+            min-height: 1.6rem;
+        }
+    
+        code {
+            margin: 0 1px;
+            padding: 3px 6px;
+            font-size: 85%;
+            max-width: 100%;
+            border-radius: 4px;
+            background-color: #f5f7f9;
+            font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+        }
+    
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            background-color: transparent;
+            outline: none;
+            cursor: pointer;
+            white-space: no-wrap;
+        }
+
+        .link:hover {
+          text-decoration: underline;
+        }
+    
+        pre .keyword, pre .directive, pre .key {
+            color: #07a;
+        }
+        pre .function, pre .builtin {
+            color: #dd4a68;
+        }
+
+        pre .operator, pre .number, pre .boolean {
+            color: #905;
+        }
+
+        pre .string {
+            color: #71a7ff;
+        }
+
+        pre .directive-hash {
+            color: #000;
+        }
+
+        pre .selector {
+            color: #0c4ee7;
+        }
+
+        pre .property {
+            color: #690;
+        }
+
+        pre .comment {
+            color: #909faf;
+        }
+
+        pre .punctuation {
+            color: #999;
+        }
+
+        pre .triple-quoted-string {
+            color: #909faf;
+        }
+
+    
+          
+:root {
+  --primary-color: #3370ff;
+}
+
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+  color: #1e1e1e;
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.sider {
+  width: 21vw;
+  max-width: 360px;
+  padding: 16px 24px;
+  height: 100%;
+  overflow-y: auto;
+  border-right: 1px solid #eaecef;
+  background: #fafafa;
+}
+
+.smoreLogo {
+  width: 100%;
+  text-align: center;
+  padding: 12px 20px 24px;
+}
+
+.smoreLogo img {
+  width: 100%;
+  height: 100%;
+  max-height: 80px;
+  min-height: 48px;
+}
+
+.search {
+  position: relative;
+}
+
+.search input {
+  width: 100%;
+  background: #f0f0f0;
+  border: 1px solid transparent;
+  font-size: 13px;
+  border-radius: 10px;
+  box-shadow: none;
+  outline: 0;
+  line-height: 22px;
+  padding: 8px 20px;
+  color: inherit;
+  box-sizing: border-box;
+}
+
+.search .inputSuffix {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  font-size: 12px;
+  color: #bdbdbd;
+  cursor: pointer;
+  opacity: 0;
+  user-select: none;
+  display: none;
+  transform: translateY(-40%);
+  transition: color 250ms, opacity 250ms;
+}
+
+.search input:focus .inputSuffix,
+.search:hover .inputSuffix {
+  opacity: 1;
+}
+
+.search .inputSuffix:hover  {
+  color: #969696;
+}
+
+.search .inputSuffix:active  {
+  color: #9a9a9a;
+}
+
+.sider-title {
+  margin: 24px 0 12px;
+  font-weight: 700;
+  font-size: 17px;
+  padding-left: 24px;
+}
+
+.pageContainer {
+  display: flex;
+  flex: 1;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.page::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+  background-color: transparent;
+}
+
+.page::-webkit-scrollbar-thumb {
+  background: #d6d8d8;
+  border-radius: 10px;
+}
+
+.mainContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.editorContainer {
+  display: flex;
+}
+
+.pageHeader {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  width: 100%;
+  padding: 0 30px;
+}
+
+.pageHeader .navLinkItem {
+  margin: 0 12px;
+  color: #213547;
+  font-weight: 500;
+  transition: color .25s;
+}
+
+.pageHeader .navLinkItem:hover {
+  color: var(--primary-color);
+}
+
+.pageContent {
+  width: 784px;
+  max-width: 54vw;
+  min-width: 500px;
+  margin: 0 auto;
+}
+
+.footer {
+  margin-top: 60px;
+  padding-bottom: 40px;
+  padding-top: 10px;
+  border-top: 1px solid #eaecef;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #818181;
+  font-size: 13px;
+}
+
+.pageLink {
+  position: sticky;
+  top: 0;
+  flex: 1;
+  min-width: 50px;
+}
+
+.pageLink a {
+  text-decoration: none;
+  color: #c1c1c1;
+  font-size: 50px;
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  display: none;
+}
+
+.pageLink a.visible {
+  display: flex;
+}
+
+.pageLink a:hover {
+  color: #c1c1c1;
+  opacity: 1;
+}
+
+.pageTocContainer {
+  position: sticky;
+  top: 0;
+  width: 13vw;
+}
+
+.tocAnchor {
+  position: absolute;
+  left: 0;
+  top: -100px;
+  height: 20px;
+  width: 2px;
+  background: var(--primary-color);
+  transition: top 0.3s ease-in-out;
+}
+
+.pageToc {
+  max-height: calc(100vh - 100px);
+  border-left: 2px solid #eaecef;
+  padding: 10px 20px 0;
+  font-size: 12px;
+  overflow-y: auto;
+  margin-top: 10px;
+}
+
+.tocTitle {
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-size: 15px;
+  display: inline-block;
+  padding-bottom: 3px;
+}
+
+.tocLabel {
+  display: block;
+  margin-bottom: 10px;
+  color: #73818d;
+  font-weight: 500;
+  max-width: 200px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.tocLabel:hover {
+  color: var(--primary-color);
+}
+
+.catalogItemTitle {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  line-height: 40px;
+  font-size: 14px;
+  padding-right: 16px;
+  padding-left: 24px;
+  margin-bottom: 4px;
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+}
+
+.catalogItemLink {
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.catalogItemLink:hover {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.catalogItemLink.active {
+  color: var(--primary-color);
+}
+
+.catalogItem.collapsed {
+  height: 44px;
+  overflow-y: hidden;
+}
+
+.catalogItem.collapsed .icon {
+  transform: rotate(0);
+}
+
+.catalogItem .icon {
+  flex-shrink: 0;
+  width: 9px;
+  height: 9px;
+  transition: all 0.2s;
+  fill: #1f1f1f;
+  transform: rotate(90deg);
+  margin-left: -20px;
+  margin-right: 12px;
+}
+
+.catalogSubPage {
+  padding-left: 24px;
+  border-left: 1px solid #eaecef;
+}
+
+.searchResult {
+  display: none;
+  position: absolute;
+  left: 20vw;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #fff;
+  padding: 60px 120px;
+  overflow-y: auto;
+}
+
+.searchTitle {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.searchItem {
+  margin-top: 40px;
+}
+
+.searchItem a {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.searchItem a:hover {
+  text-decoration: underline;
+}
+
+.searchHighlight {
+  background: yellow;
+}
+
+
+          div.paragraph {
+            line-height: 2;
+            margin: 0 0 1.1rem;
+          }
+
+          h1 {
+            margin: 2rem 0 1.5rem;
+            font-size: 1.8rem;
+          }
+
+          h2 {
+            margin: 1.8rem 0 1.2rem;
+            font-size: 1.5rem;
+          }
+
+          h3 {
+            margin: 1.4rem 0 1.2rem;
+          }
+
+          h4 {
+            margin: 1.3rem 0 1.2rem;
+          }
+        </style>
+        
+      </head>
+      <body>
+        <div><div class="container"><div class="main"><div class="sider"><div class="smoreLogo"><img src="./smartmore.png" alt="smartmore"/></div><div class="search"><input type="text" id="searchInput" placeholder="搜索"/><span role="img" aria-label="close-circle" id="searchClearIcon" class="anticon anticon-close-circle inputSuffix"><svg viewBox="64 64 896 896" focusable="false" data-icon="close-circle" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm165.4 618.2l-66-.3L512 563.4l-99.3 118.4-66.1.3c-4.4 0-8-3.5-8-8 0-1.9.7-3.7 1.9-5.2l130.1-155L340.5 359a8.32 8.32 0 01-1.9-5.2c0-4.4 3.6-8 8-8l66.1.3L512 464.6l99.3-118.4 66-.3c4.4 0 8 3.5 8 8 0 1.9-.7 3.7-1.9 5.2L553.5 514l130 155c1.2 1.5 1.9 3.3 1.9 5.2 0 4.4-3.6 8-8 8z"></path></svg></span></div><div class="sider-title"><span class="sider-title-text">文档示例</span></div><div class="catalog"><div class="catalogItem "><div class="catalogItemTitle "><a href="./index.html" id="catalog-link-/index" class="catalogItemLink">文章示例——优秀软件工程师的自我修养</a></div></div><div class="catalogItem "><div class="catalogItemTitle "><a href="./导出PDF示例.html" id="catalog-link-/导出PDF示例" class="catalogItemLink">导出PDF示例</a></div></div><div class="catalogItem collapsed"><div class="catalogItemTitle parent"><svg class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2289" width="200" height="200"><path d="M796.472804 563.422648c28.584795-26.785752 29.984051-71.561935 3.298246-100.146731-1.099415-1.099415-2.098884-2.19883-3.298246-3.298246L335.91778 21.410951C321.225595 7.618288 301.735962-0.077619 281.546701 0.022328 240.16871-0.97714 205.886945 31.705475 204.78753 73.083466c0.299841 19.389686 8.395534 37.879851 22.488038 51.17278L633.55946 512.249867 227.275568 899.144073C213.083117 912.536949 204.887477 931.326954 204.78753 950.916534c1.099415 41.37799 35.38118 74.060606 76.759171 73.061138 20.189261 0.099947 39.678894-7.59596 54.371079-21.388623L796.472804 563.422648z" p-id="2290"></path></svg><a href="./富文本节点类型/index.html" id="catalog-link-/富文本节点类型/index" class="catalogItemLink">富文本节点类型</a></div><div class="catalogSubPage"><div class="catalog"><div class="catalogItem "><div class="catalogItemTitle "><a href="./富文本节点类型/标题.html" id="catalog-link-/富文本节点类型/标题" class="catalogItemLink">标题</a></div></div><div class="catalogItem "><div class="catalogItemTitle "><a href="./富文本节点类型/文本样式.html" id="catalog-link-/富文本节点类型/文本样式" class="catalogItemLink">文本样式</a></div></div><div class="catalogItem "><div class="catalogItemTitle "><a href="./富文本节点类型/列表.html" id="catalog-link-/富文本节点类型/列表" class="catalogItemLink">列表</a></div></div><div class="catalogItem "><div class="catalogItemTitle "><a href="./富文本节点类型/代码块.html" id="catalog-link-/富文本节点类型/代码块" class="catalogItemLink">代码块</a></div></div><div class="catalogItem "><div class="catalogItemTitle "><a href="./富文本节点类型/引用.html" id="catalog-link-/富文本节点类型/引用" class="catalogItemLink">引用</a></div></div><div class="catalogItem "><div class="catalogItemTitle "><a href="./富文本节点类型/提示.html" id="catalog-link-/富文本节点类型/提示" class="catalogItemLink">提示</a></div></div><div class="catalogItem "><div class="catalogItemTitle "><a href="./富文本节点类型/数学公式.html" id="catalog-link-/富文本节点类型/数学公式" class="catalogItemLink">数学公式</a></div></div><div class="catalogItem "><div class="catalogItemTitle "><a href="./富文本节点类型/表格.html" id="catalog-link-/富文本节点类型/表格" class="catalogItemLink">表格</a></div></div><div class="catalogItem "><div class="catalogItemTitle "><a href="./富文本节点类型/图片.html" id="catalog-link-/富文本节点类型/图片" class="catalogItemLink">图片</a></div></div><div class="catalogItem "><div class="catalogItemTitle "><a href="./富文本节点类型/视频.html" id="catalog-link-/富文本节点类型/视频" class="catalogItemLink">视频</a></div></div><div class="catalogItem "><div class="catalogItemTitle "><a href="./富文本节点类型/文件.html" id="catalog-link-/富文本节点类型/文件" class="catalogItemLink">文件</a></div></div><div class="catalogItem "><div class="catalogItemTitle "><a href="./富文本节点类型/HTTP API.html" id="catalog-link-/富文本节点类型/HTTP API" class="catalogItemLink">HTTP API</a></div></div></div></div></div></div></div><div class="mainContainer"><div class="pageHeader"></div><div class="pageContainer"><div class="pageLink leftLink"><a id="prevPageLink" class="" href=".undefined.html"><span role="img" aria-label="left" class="anticon anticon-left"><svg viewBox="64 64 896 896" focusable="false" data-icon="left" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M724 218.3V141c0-6.7-7.7-10.4-12.9-6.3L260.3 486.8a31.86 31.86 0 000 50.3l450.8 352.1c5.3 4.1 12.9.4 12.9-6.3v-77.3c0-4.9-2.3-9.6-6.1-12.6l-360-281 360-281.1c3.8-3 6.1-7.7 6.1-12.6z"></path></svg></span></a></div><div class="editorContainer"><div class="pageContent"><div id="page"><h1 style=" border-bottom:1px solid #eee; font-size:2rem; margin-bottom:2rem; text-align:undefined;" id=""><span>文章示例——优秀软件工程师的自我修养</span></h1><div class="paragraph" style=""><span>原链：</span><span><a href="https://medium.com/@_michaellin/how-to-be-a-10x-engineer-fdac2a5a1bd5" target="_blank" class="link">How to Be a 10x Software Engineer | by Michael Lin | Feb, 2022 | Medium</a></span></div><h1 style="" id="N2NhODBm"><span>初级工程师常犯的3个错误。你在犯这些错误吗？</span></h1><div class="paragraph" style=""><span></span></div><div class='image'>
+            <img src="./image/1.png" style="width: 788px;"/>
+            
+        </div><div class="paragraph" style=""><span>最优秀的工程师一夫当关万夫莫开。就像一支单兵部队一样，相比一个初级工程师团队，他们能够更高效更优质地提供更多价值。</span></div><div class="paragraph" style=""><span>但这怎么可能呢？不是越多越好吗？ </span></div><div class="paragraph" style=""><span>在我担任Netflix和亚马逊的工程负责人期间，我曾与刚毕业的实习生一起工作，一直到首席工程师（亚马逊的L7及以上级别），我可以证明最优秀的工程师确实存在。我也可以自信地说，他们不仅仅是：</span></div><ul><li style=""><span>打字速度快 10 倍</span></li><li style=""><span>工作 10 倍的时间</span></li><li style=""><span>写 10 倍以上的代码</span></li></ul><div class="paragraph" style=""><span>事实上，最优秀的工程师的打字速度可能只有一半，工作时间也只有一半，而且花在删除代码上的时间比写代码多。</span></div><div class='image'>
+            <img src="./image/2.png" style="width: 1280px;"/>
+            <div class='image-caption'>10倍的工程师往往在LeetCode方面也更出色，但这并不是他们与众不同的地方。</div>
+        </div><div class="paragraph" style=""><span><strong>最好的工程师和初级工程师之间的区别可以归结为心态的问题。他们使用正确的工具，问正确的问题，并知道如何确定优先次序。这些技能与编码关系不大，即使是非技术人员也能培养。</strong></span></div><blockquote><div style=""><span>令人惊讶的是，将最好的工程师与普通工程师区分开来的是非技术性技能。</span></div></blockquote><div class="paragraph" style=""><span>在这篇文章中，我讨论了初级工程师常犯的3个错误，以及高级工程师如何以不同的方式解决同样的问题--导致巨大的不同结果。</span></div><h2 style="" id="MzU3ZmE2"><span>1. 对工具的研究不深入</span></h2><div class="paragraph" style=""><span>亚伯拉罕-林肯曾经说过：&quot;如果我有8个小时来砍一棵树，我会花7个小时来磨我的斧头。</span></div><div class="paragraph" style=""><span>一个初级工程师可能会花8个小时用一把钝斧头砍树，而高级工程师会花1小时挑选合适的电锯，再花5分钟砍树。</span></div><div class='image'>
+            <img src="./image/3.png" style="width: 344px;"/>
+            <div class='image-caption'>诚实的亚伯会成为一个伟大的工程师</div>
+        </div><div class="paragraph" style=""><span>我看到初级工程师常犯的一个错误是，他们只顾埋头写代码，坚持使用他们知道的工具，并试图将其适用于各种情况。</span></div><blockquote><div style=""><span>如果一个普通的工程师只知道如何使用锤子，他们也会用锤子来挖洞🙄</span></div></blockquote><div class="paragraph" style=""><span>他们几乎没有花时间去研究其他的替代方法--或者是否有可能完成写0代码的工作！</span></div><div class="paragraph" style=""><span>使用正确的工具，就是在几周的劳动和10分钟内完成任务之间的区别。这就是10倍的差异。</span></div><h3 style="" id="ZTJlZWIx"><span>任务实例：建立一个网站</span></h3><div class="paragraph" style=""><span>最近，我有幸与一位初级工程师打赌，谁能更快地建立一个个人网站。这位新毕业的工程师花了两周时间，写了1000多行代码。而他在两周后甚至都没有完成！我花了1天时间，写了0行代码，甚至连汗都没出。你可以</span><span><a href="https://michaellin.io/" target="_blank" class="link">在这里看到我的主页</a></span><span>的结果。</span></div><div class='image'>
+            <img src="./image/4.png" style="width: 677px;"/>
+            <div class='image-caption'>Notion page + super.so for deployments = michaellin.io</div>
+        </div><div class="paragraph" style=""><span>当我请这位初级工程师解释她是如何处理这个问题的时候，就清楚了她为什么花了这么长时间才完成。</span></div><blockquote><div style=""><span>&quot;好吧，我在学校学会了如何制作React应用程序，所以我只是用它从头开始创建了一个网站。但要把图片和CSS弄好是很难的。而且我也不知道如何部署它。所以我想我必须在AWS上写一个自定义的部署脚本，但被控制台弄得有点糊涂。微型实例和大型实例之间又有什么区别呢？&quot;</span></div></blockquote><div class="paragraph" style=""><span>请注意，这位工程师的方法错过了几个关键点。首先，她从未讨论过：</span></div><ul><li style=""><span>需求--没有提到SEO、评论或拥有预制模板是否重要。</span></li><li style=""><span>替代工具--他们只知道React+AWS，并坚持使用它。</span></li></ul><div class="paragraph" style=""><span>想象一下，要从头开始重建评论功能。或者确保SEO正常工作。这些功能中的每一个都是一个团队的工作，以正确实现。难怪她从来没有完成!</span></div><h2 style="" id="Nzg3ZTk3"><span>2. 不寻求帮助</span></h2><div class="paragraph" style=""><span>这是一个非常简单的问题，很容易解决，但却造成了大量的时间浪费，我不得不提一下。一些初级工程师有这样的误解：高级工程师就像一个孤独的天才。如果他们一直盯着这个问题，最终会得到解决。</span></div><div class='image'>
+            <img src="./image/5.png" style="width: 625px;"/>
+            <div class='image-caption'>10倍的工程师不是 "孤独的天才"，他们也需要寻求帮助！</div>
+        </div><div class="paragraph" style=""><span>但这是一种相当天真的思维方式。很多时候，区别在于</span><span><strong>他们缺少背景--他们自己不可能推导出的信息</strong></span><span>。</span></div><div class="paragraph" style=""><span>因此，他们不是直接寻求帮助，而是在代码库中苦苦思索，一遍又一遍地看同几行代码，而向队友提出一个5分钟的问题就能立即解决这个问题！</span></div><blockquote><div style=""><span>一个知道如何求助的经验不足的工程师，总是能打败一个从不求助的天才工程师。</span></div></blockquote><div class="paragraph" style=""><span>有时，为了继续下去，显然需要额外的背景。例如，我们常常不清楚：</span></div><ul><li style=""><span>为什么代码库的结构是这样的</span></li><li style=""><span>需要从其他团队调用哪个API</span></li><li style=""><span>部署是如何进行的</span></li></ul><div class="paragraph" style=""><span>这些都是上下文情况的例子，在这些情况下，你最好寻求帮助，而不是进一步挖掘代码库的内容。不要害怕寻求帮助！</span></div><h2 style="" id="NzkwYzk3"><span>3. 不能创造商业价值</span></h2><div class="paragraph" style=""><span>10x工程师首先是投资者。</span></div><div class="paragraph" style=""><span>他们明白他们的工作是一种投资--而他们的投资回报必须大大超过所花费的时间成本。他们了解机会成本：花时间建立一个功能意味着不花时间建立另一个功能。</span></div><blockquote><div style=""><span>工程师必须权衡机会成本--&quot;在所有你可以建立的功能中，这个功能是对你时间的最佳利用吗？&quot;</span></div></blockquote><div class="paragraph" style=""><span>他们明白，代码是达到目的的一种手段--商业目的。如果他们能在没有代码的情况下实现他们的目标，那就更好了。编写的工作更少，需要维护的代码也更少--这是一个双赢的局面。</span></div><div class='image'>
+            <img src="./image/6.png" style="width: 700px;"/>
+            <div class='image-caption'>10倍的工程师是投资者，就像沃伦-巴菲特一样。</div>
+        </div><div class="paragraph" style=""><span></span></div><div class="paragraph" style=""><span>我看到很多新的工程师忽略了这些商业目标。例如：</span></div><ul><li style=""><span>&quot;有一项新的技术，真的很酷。让我们花5天时间把它整合到网站上&quot;（与产品不一致）。</span></li><li style=""><span>&quot;唉，我不喜欢代码的结构方式。让我们花下一个冲刺期来重构&quot;（机会成本--可以用这些时间来建立创造收入的功能）。</span></li><li style=""><span>&quot;这个平台历史遗留问题太多了--让我们迁移到一个新的平台&quot;（迁移是否能帮助你大大加快进度，还是只是一个增量改进？）</span></li></ul><div class="paragraph" style=""><span>正是这种计算方法导致了10倍工程师的出现。如果一个初级工程师花了2个小时在一个不增加收入的复杂功能上，而一个高级工程师花了1个小时在一个简单的复制变化上，使收入增加了5倍，我们就得到了10倍的生产力改善。</span></div><blockquote><div style=""><span>1/2的时间花在一个能产生5倍收入的功能上=10倍的价值交付。</span></div></blockquote><h1 style="" id="MmIzOTA3"><span>最后的思考</span></h1><div class="paragraph" style=""><span>非技术性技能（&quot;软技能&quot;）是最强的工程师和最弱的工程师之间的区别。如果一个工程师避免了上述所有的错误，但他们却很难与之合作，那么他们的10倍技能就会失效。</span></div><div class='image'>
+            <img src="./image/7.png" style="width: 610px;"/>
+            <div class='image-caption'>摘录自Netflix文化牌</div>
+        </div><div class="paragraph" style=""><span>你努力工作，成为一名工程师。工程师比不做一个混蛋要难得多。不要因为你的自负而让你的努力工作付诸东流。并且永远记住：</span></div><blockquote><div style=""><span>工程师的首要任务是创造价值。</span></div></blockquote><div class="paragraph" style=""><span></span></div><div class="paragraph" style=""><span></span></div><div class="paragraph" style=""><span></span></div><div class="paragraph" style=""><span></span></div><div class="paragraph" style=""><span></span></div><div class="paragraph" style=""><span></span></div></div><div class="footer"><div>© 2024 SmartMore, powered by Docaemon</div><div>发布时间：2024-04-08</div></div></div></div><div class="pageLink rightLink"><a id="nextPageLink" class="visible" href="./导出PDF示例.html"><span role="img" aria-label="right" class="anticon anticon-right"><svg viewBox="64 64 896 896" focusable="false" data-icon="right" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M765.7 486.8L314.9 134.7A7.97 7.97 0 00302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 000-50.4z"></path></svg></span></a></div><div class="pageTocContainer"><div class="pageToc"><div class="tocTitle">大纲</div><div id="tocContent"><a href="#N2NhODBm" style="margin-left:0" class="tocLabel">初级工程师常犯的3个错误。你在犯这些错误吗？</a><a href="#MzU3ZmE2" style="margin-left:16px" class="tocLabel">1. 对工具的研究不深入</a><a href="#ZTJlZWIx" style="margin-left:32px" class="tocLabel">任务实例：建立一个网站</a><a href="#Nzg3ZTk3" style="margin-left:16px" class="tocLabel">2. 不寻求帮助</a><a href="#NzkwYzk3" style="margin-left:16px" class="tocLabel">3. 不能创造商业价值</a><a href="#MmIzOTA3" style="margin-left:0" class="tocLabel">最后的思考</a></div></div><div class="tocAnchor"></div></div></div></div></div><div id="searchResult" class="searchResult"></div></div></div>
+
+        <script src="./js/search.js"></script>
+        <script src="./js/page.js"></script>
+        <script>
+    const isWebServer = location.origin.startsWith('http');
+    if (isWebServer) {
+      // 目录切换
+      const pageLinks = [
+        ...document.querySelectorAll('.catalogItemLink'),
+        document.getElementById('prevPageLink'),
+        document.getElementById('nextPageLink')
+      ];
+
+      const input = document.getElementById('searchInput');
+      const resetInputButton = document.getElementById('searchClearIcon')
+      const searchResult = document.getElementById('searchResult');
+
+      const changePage = (pageUrl, shouldUpdateUrl=true) => {
+          // 隐藏搜索页面
+          input.value = ''
+          resetInputButton.style.display = 'none';
+          searchResult.style.display = 'none';
+
+          // 替换 url
+          if(shouldUpdateUrl){
+            window.history.pushState(null, '', pageUrl);
+          }
+
+          const targetPage = pageList.find(p => decodeURIComponent(pageUrl.replace('', '')) === p.pageId.replace(/index$/, ''));
+          // 替换 title
+          document.title = targetPage.title;
+          // 替换 page 内容
+          document.getElementById('page').innerHTML = targetPage.pageHtml;
+          // 滚动到顶部
+          document.querySelector('.pageContainer').scrollTo({ top: 0 })
+      
+          // 替换 toc
+          document.getElementById('tocContent').innerHTML = targetPage.tocHtml;
+      
+          // 更新目录选中状态
+          const lastActiveLink = document.querySelector('.active');
+          lastActiveLink.classList.remove('active');
+      
+          const currActiveLink = document.getElementById('catalog-link-' + targetPage.pageId);
+          currActiveLink.classList.add('active');
+      
+          // 更新前后文章链接
+          const prevPageLink = document.getElementById('prevPageLink');
+          if (targetPage.prev) {
+            const absolutePath = targetPage.prev.substring(targetPage.prev.lastIndexOf('./') + 1);
+            prevPageLink.href = ("" + absolutePath.split('.html')[0]).replace(/index$/, '');
+            prevPageLink.classList.add('visible');
+          } else {
+            prevPageLink.classList.remove('visible');
+          }
+      
+          const nextPageLink = document.getElementById('nextPageLink');
+          if (targetPage.next) {
+            const absolutePath = targetPage.next.substring(targetPage.next.lastIndexOf('./') + 1);
+            nextPageLink.href = ("" + absolutePath.split('.html')[0]).replace(/index$/, '');
+            nextPageLink.classList.add('visible');
+          } else {
+            nextPageLink.classList.remove('visible');
+          }
+
+          // 添加页面css资源
+          const links = Array.from(document.querySelectorAll('link'));
+          const linkHrefList = links.map(link => link.getAttribute('href'));
+          targetPage.css.forEach(path => {
+            const absolutePath = path.substring(path.lastIndexOf('./') + 1);
+            if (!linkHrefList.find(link => link.includes(absolutePath))) {
+              const linkElm = document.createElement('link');
+              linkElm.rel = 'stylesheet';
+              linkElm.type = 'text/css';
+              linkElm.href = path;
+
+              document.head.append(linkElm);
+            }
+          })
+      }
+
+      pageLinks.forEach(link => {
+        const path = link.getAttribute('href');
+        const absolutePath = path.substring(path.lastIndexOf('./') + 1);
+        link.setAttribute('href', ("" + absolutePath.split('.html')[0]).replace(/index$/, ''))
+
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+
+          const aElm = e.target.closest('a')
+          const aElmHref = new URL(aElm.href).pathname
+
+          changePage(aElmHref)
+        });
+      });
+
+      window.addEventListener('popstate', () => {
+        changePage(location.pathname, false);
+      })
+    }
+</script>
+        <script>
+    // 初始化目录选中，展开状态
+    const currLink = document.getElementById('catalog-link-/index');
+    currLink.classList.add('active');
+
+    const catalogPages = []
+    if (undefined) {
+      // 默认全部展开
+      const catalogItems = document.querySelectorAll('.catalogItem');
+      catalogItems.forEach((elem) => {
+        elem.classList.remove('collapsed');
+      });
+
+      pageList.forEach(v => catalogPages.push(v.pageId))
+    } else {
+      // 仅展开当前文章
+      const catalogItems = document.querySelectorAll('.catalogItem');
+      catalogItems.forEach((elem) => {
+        if (elem.contains(currLink)) {
+          elem.classList.remove('collapsed');
+
+          const catalogItem = elem.querySelector('.catalogItemTitle a')
+          catalogItem && catalogPages.push(catalogItem.id.split('catalog-link-')[1])
+        }
+      });
+    }
+    
+    // 文件夹展开
+    const catalogItemTitles = document.querySelectorAll('.catalogItemTitle.parent');
+    Array.from(catalogItemTitles).forEach((title) => {
+      const container = title.parentElement;
+      title.addEventListener('click', () => {
+        if (container) {
+          if (container.classList.contains('collapsed')) {
+            container.classList.remove('collapsed');
+          } else {
+            container.classList.add('collapsed');
+          }
+        }
+      });
+    });
+  </script>
+        <script>
+    // scroll to hash
+    const hash = location.hash;
+    if (hash) {
+      const heading = document.getElementById(decodeURI(hash.split('#')[1]));
+      heading?.scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+        <script>
+    // search
+    const input = document.getElementById('searchInput');
+    const resetInputButton = document.getElementById('searchClearIcon')
+    const searchResult = document.getElementById('searchResult');
+
+    resetInputButton.onclick = () => {
+      input.value = ''
+      // 隐藏搜索页面
+      searchResult.style.display = 'none';
+      resetInputButton.style.display = 'none';
+
+      input.focus()
+    }
+
+    const formatSearchResultContent = (keyword, length) => {
+      if (false) {
+        return 'Found </strong>' + length + '</strong> result related to "' + keyword + '"'
+      } else {
+        return '搜索到与“' + keyword + '”相关的<strong>' + length + '</strong>条结果'
+      }
+    }
+
+    if (input && searchResult) {
+      input.addEventListener('input', (e) => {
+        const value = e.target.value;
+        
+        if (value) {
+          searchResult.style.display = 'block';
+          resetInputButton.style.display = 'block';
+
+          const result = [];
+          searchList.forEach((item) => {
+            const valueReg = new RegExp(value, 'i');
+            if (valueReg.test(item.content)) {
+              const reg = new RegExp(value, 'ig');
+
+              const index = item.content.indexOf(value);
+              const content = item.content
+                .substring(index - 30, index + 300)
+                .replace(reg, '<span class="searchHighlight">' + value + '</span>');
+
+              const pageUrl = isWebServer ? "" + item.pageId : "." + item.pageId;
+              result.push(
+                  '<div class="searchItem"><a href="' + pageUrl +
+                  '.html">' +
+                  item.title +
+                  '</a><p>' +
+                  content +
+                  '</p></div>'
+              );
+            }
+          });
+
+          const titleHtml =
+            '<div class="searchTitle">' + formatSearchResultContent(value, result.length) + '</div>';
+          const innerHtml = titleHtml + result.join('');
+
+          if (searchResult) {
+            searchResult.innerHTML = innerHtml;
+          }
+        } else {
+          // 隐藏搜索页面
+          searchResult.style.display = 'none';
+          resetInputButton.style.display = 'none';
+        }
+      });
+    }
+  </script>
+      </body>
+    </html>
+  
